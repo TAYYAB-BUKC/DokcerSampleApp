@@ -1,4 +1,4 @@
-namespace DokcerSampleApp.Models
+namespace DockerSampleApp.Models
 {
     public class ErrorViewModel
     {

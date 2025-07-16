@@ -1,8 +1,8 @@
 using System.Diagnostics;
-using DokcerSampleApp.Models;
+using DockerSampleApp.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace DokcerSampleApp.Controllers
+namespace DockerSampleApp.Controllers
 {
     public class HomeController : Controller
     {
