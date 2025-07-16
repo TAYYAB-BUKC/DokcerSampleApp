@@ -1,0 +1,11 @@
+﻿FROM mcr.microsoft.com/dotnet/sdk AS BUILD
+WORKDIR /src
+COPY ./DockerSampleAppWithoutDockerSupport.csproj .
+RUN dotnet restore ./DockerSampleAppWithoutDockerSupport.csproj
+COPY ./ .
+RUN dotnet publish ./DockerSampleAppWithoutDockerSupport.csproj -c Release -o /app/
+
+FROM mcr.microsoft.com/dotnet/sdk AS PUBLISH
+WORKDIR /app
+COPY --from=BUILD /app .
+ENTRYPOINT ["dotnet", "DockerSampleAppWithoutDockerSupport.dll"]
